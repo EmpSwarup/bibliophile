@@ -43,9 +43,11 @@ const Header = () => {
         <div className="navbar-cart">
           <UilShoppingCart />
         </div>
-        <div className="navbar-menu">
-          <UilUserCircle />
-        </div>
+        <Link to={`/user `}>
+          <div className="navbar-menu">
+            <UilUserCircle />
+          </div>
+        </Link>
       </div>
     </div>
   );
