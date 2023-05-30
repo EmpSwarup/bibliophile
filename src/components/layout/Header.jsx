@@ -1,7 +1,8 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import {
   UilShoppingCart,
   UilListUl,
+  UilUserCircle,
   UilBookOpen,
 } from "@iconscout/react-unicons";
 import "./header.css";
@@ -10,19 +11,29 @@ const Header = () => {
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <div className="navbar-logo">
-          <UilBookOpen size="35" />
-        </div>
-        <div className="navbar-title">
-          <h3>Bibliophile</h3>
-        </div>
+        <Link to={`/`}>
+          <div className="navbar-logo">
+            <UilBookOpen size="35" />
+          </div>
+        </Link>
+        <Link to={`/`}>
+          <div className="navbar-title">
+            <h3>Bibliophile</h3>
+          </div>
+        </Link>
       </div>
+
       <div className="navbar-middle">
         <ul className="navbar-list">
-          <li className="navbar-list-items">Home</li>
-          <li className="navbar-list-items">Category</li>
-          <li className="navbar-list-items">Collections</li>
-          <li className="navbar-list-items">Contact Us</li>
+          <Link to={`/`}>
+            <li className="navbar-list-items">Home</li>
+          </Link>
+          <Link to={`/books`}>
+            <li className="navbar-list-items">Books</li>
+          </Link>
+          <Link to={`/trade`}>
+            <li className="navbar-list-items">Trade</li>
+          </Link>
         </ul>
       </div>
       <div className="navbar-right">
@@ -33,7 +44,7 @@ const Header = () => {
           <UilShoppingCart />
         </div>
         <div className="navbar-menu">
-          <UilListUl />
+          <UilUserCircle />
         </div>
       </div>
     </div>
